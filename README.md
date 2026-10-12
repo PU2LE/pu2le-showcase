@@ -13,8 +13,7 @@ I'm the sole developer. It's a live product with real external users as of Octob
 **This repository is a curated excerpt, not the full source.** PU2LE is a commercial
 product (see `LICENSE`), so the full backend, billing logic, and pricing details
 aren't published here. What *is* included is real, unmodified production code — the
-part I think is most worth reading for a software engineering application: the
-distributed task scheduler.
+part that best shows how the system actually works: the distributed task scheduler.
 
 ## What's in this repo
 
@@ -22,7 +21,7 @@ distributed task scheduler.
   worker PC gets next, re-assigns work from slow/crashed workers, runs speculative
   re-execution for stragglers, and routes heavier tiles to GPU-capable machines. See
   the file's own header comment for the full context (what it depends on, why it's
-  structured this way). This is the piece I'd point a reviewer to first.
+  structured this way). Start here to understand how the distribution actually works.
 - **`ricomponi.py`** — stitches the rendered tiles back into the final image.
 - **`cloud_storage.py`**, **`config_griglia.py`** — small supporting modules
   `scheduler.py`/`ricomponi.py` reference, included so the logic reads cleanly in
@@ -58,8 +57,6 @@ macOS). ~13,000 lines of Python across the full product, 125 automated tests.
 ## Why only this much
 
 PU2LE has real users and a license that reserves all rights on the full product (see
-`LICENSE`). Publishing the whole backend publicly isn't something I'm willing to do
-just for a job application — but I wanted to share real code, not a toy example, so
-this is the piece that's both genuinely representative of the hardest problem I solved
-and safe to show on its own. Happy to walk through the rest of the system, including
-parts not included here, in person.
+`LICENSE`), so the whole backend isn't published here. This excerpt exists to give a
+genuine look at how the system is actually built — real code, not a toy example —
+without exposing the full commercial product.
